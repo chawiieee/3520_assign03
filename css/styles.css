@@ -1,0 +1,102 @@
+/* CUSTOM PROPERTIES */
+:root {
+    --light-red: #e68181;
+    --dark-red: #f21d1d;
+    --darkest-red: #5c0000;
+    --darkest-blue: #00001f;
+    --black: #1f0000;
+    --gray: #808080;
+}
+
+/* NORMALIZING RULES */
+body,
+html {
+    min-height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 30px 50px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*END*/
+
+body {
+    background: var(--darkest-blue);
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: whitesmoke;
+}
+
+/*SECTION 1 -- INTRO */
+.intro {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px;
+    font-size: 100px;
+    color: yellow;
+}
+
+/*SECTION 2 -- MAIN IMAGE*/
+.main-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+    margin-bottom: 50px;
+}
+
+/*SECTION 3 -- OPTIONS*/
+.box-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.box {
+    background-color: var(--darkest-red);
+    min-width: 50px;
+    min-height: 50px;
+    width: 10vw;
+    height: 10vw;
+    padding: 10px;
+    border-radius: 10px;
+
+    /* aligns items in the middle of the box */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.box:hover {
+    background-color: red;
+    transition: 0.25s;
+}
+
+.box:active {
+    text-decoration: none;
+    background-color: whitesmoke;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.open {
+    font-size: 30px;
+    position: absolute;
+    cursor: pointer
+}
