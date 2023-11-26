@@ -38,11 +38,14 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin: 50px;
-    font-size: 100px;
-    color: yellow;
 }
+
+.title {
+    width: 50%;
+    height: auto%;
+}
+
 
 /*SECTION 2 -- MAIN IMAGE*/
 .main-image {
