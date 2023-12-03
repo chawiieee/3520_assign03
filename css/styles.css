@@ -1,11 +1,13 @@
 /* CUSTOM PROPERTIES */
 :root {
-    --light-red: #e68181;
-    --dark-red: #f21d1d;
+    --red: #f13d24;
+    --sat-yellow: #fcc31b;
+    --light: #fbbf4f;
+    --sat-orange: #f6881c;
     --darkest-red: #5c0000;
     --darkest-blue: #00001f;
-    --black: #1f0000;
-    --gray: #808080;
+    --light-gray: #403d3e;
+    --gray: #231F20;
 }
 
 /* NORMALIZING RULES */
@@ -33,73 +35,103 @@ body {
     color: whitesmoke;
 }
 
-/*SECTION 1 -- INTRO */
-.intro {
+/*SECTION 1 -- TITLE */
+#titlePage {
     align-items: center;
     display: flex;
     flex-direction: column;
     margin: 50px;
 }
 
-.title {
-    width: 50%;
-    height: auto;
+#title {
+    min-width: 75vw;
+    height: 66vh;
 }
 
-
-/*SECTION 2 -- MAIN IMAGE*/
-.main-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 800px;
-    margin-bottom: 50px;
+.button-enter {
+    display: inline-block;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 10px 13px 10px 15px;
+    font-size: 25px;
+    border-width: 3px;
+    cursor: pointer;
+    max-width: 25vw;
+    margin: 5px;
+    border-color: var(--sat-orange);
+    color: var(--sat-orange);
 }
 
-/*SECTION 3 -- OPTIONS*/
-.box-area {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 1vw;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 800px;
+.button-enter:hover {
+    transition: 0.25s;
+    border-color: var(--light);
+    color: var(--light);
 }
 
-.box {
-    background-color: var(--darkest-red);
-    min-width: 50px;
-    min-height: 50px;
-    width: 10vw;
-    height: 10vw;
-    padding: 10px;
-    border-radius: 10px;
-
-    /* aligns items in the middle of the box */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+/*BACKNEXT BUTTON*/
+.bn-button {
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 10px 25px 0px 10px;
+    margin-top: 50px;
+    margin-right: 25px;
+    color: var(--light)
 }
 
-.box:hover {
-    background-color: red;
+.bn-button:hover {
+    color: whitesmoke;
     transition: 0.25s;
 }
 
-.box:active {
-    text-decoration: none;
-    background-color: whitesmoke;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
 }
 
-.open {
-    font-size: 30px;
-    position: absolute;
-    cursor: pointer
+.prompt-button {
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 10px;
+    color: var(--light)
+}
+
+.prompt-button:hover {
+    color: whitesmoke;
+    transition: 0.25s;
+}
+
+.locked-button {
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 10px;
+    color: var(--light-gray)
+}
+
+/*SCENE01*/
+.scene {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    min-width: 50vw;
+    max-width: fit-content;
+    height: auto;
+}
+
+.prompt {
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 10px;
+    background-color: rgba(89, 89, 142, 0.25);
+    border-color: var(--gray);
+    min-width: 50vw;
+    height: auto;
 }

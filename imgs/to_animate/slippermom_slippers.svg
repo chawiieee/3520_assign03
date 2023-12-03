@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_13" data-name="Layer 13" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2005.06 788.12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e6e7e8;
+        stroke: #2e3192;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #ed1c24;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="m887.29,610.29c11.47,8.44,45.16,33.22,40.01,67.34-3.09,20.49-19.37,38.91-39.13,44.79-32.7,9.74-61.52-18.85-71.87-29.12-26.99-26.78-50.09-76.9-31.43-98.73,18.65-21.82,71.73-6.86,102.41,15.71Z"/>
+  <polyline class="cls-2" points="810.62 687.26 877.39 687.26 887.29 610.29"/>
+</svg>

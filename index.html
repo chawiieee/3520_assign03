@@ -2,35 +2,88 @@
 <html lang="en">
 
 <head>
-        <meta charset="UTF-8">
-        <title>Asian Mom Striker</title>
-        <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <title>Striker Mom Php ed</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-        <div class="intro"> <img src="imgs/AMS_title.svg" alt="title" class="title"> </div>
-        <div class="main-image"><img id="myImage" src="imgs/granny-def.png" alt="image of character selection">
+    <!-- TITLE PAGE -->
+    <div id="titlePage">
+        <div> <img src="imgs/AMS_title.svg" alt="Striker Mom Title" id="title"> </div>
+        <div class="button-enter">ENTER</div>
+    </div>
 
+    <!-- SCENE 01 -->
+    <div id="scene01" style="display: none;">
+        <div><img src="imgs/drunkson.svg" alt="drunk son comes home" class="scene-img"></div>
+        <div class="prompt">
+            <div id="prompt-01"> 2:43am </div>
+            <div id="prompt-01v2"> Your pushing-40-unemployed-balding-son came home drunk and was making
+                quite the racket. </div>
+            <div id="prompt-01v3"> Prove that you are fit to be a stereotypical Filipino mother! </div>
+            <div>
+                <div class="bn-button" id="button-back-01">BACK</div>
+                <div class="bn-button" id="button-next-01">NEXT</div>
+            </div>
         </div>
-        <div class="box-area">
-                <button onclick="changeImage('imgs/granny-slippers.png')" class="box" id="opt-01"> <img
-                                src="imgs/slippers.png" alt="slippers icon"></button>
-                <button onclick="changeImage('imgs/granny-belt.png')" class="box" id="opt-02"> <img src="imgs/belt.png"
-                                alt="belt icon">
-                </button>
-                <button onclick="changeImage('imgs/granny-ladle.png')" class="box" id="opt-03"> <img
-                                src="imgs/ladle.png" alt="ladle icon">
-                </button>
-                <button onclick="changeImage('imgs/granny-hanger.png')" class="box" id="opt-04"> <img
-                                src="imgs/hanger.png" alt="hanger icon">
-                </button>
-                <button onclick="changeImage('imgs/granny-def.png')" class="box" id="opt-05"> <img src="imgs/fist.png"
-                                alt="fist icon">
-                </button>
+    </div>
+
+    <!-- SCENE 02 -->
+    <div id="scene02" style="display: none;">
+        <div><img src="imgs/angrymom.svg" alt="angry mom" class="scene-img" id="angryMomImg"></div>
+        <div class="prompt" id="prompt-02">
+            <div class="button-container">
+                <div class="prompt-button" id="button-talk">Talk like a proper civilian</div>
+                <div class="prompt-button" id="button-guilttrip">Remind him of the things you have done for him</div>
+                <div class="prompt-button" id="button-storage">Open Storage</div>
+                <div class="bn-button" id="button-back-s02">BACK</div>
+            </div>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="js/scripts.js"></script>
+        <div id="talk-opt" style="display: none;">
+            <div class="prompt">
+                You tried to calmly talk to your son. <br> He didn't hear a word and fell asleep. <br>
+                YOU. ARE. A. ONE. BIG. FAILURE.
+                <br>
+                <div class="bn-button" id="button-back-talk">BACK</div>
+            </div>
+        </div>
+
+        <div id="gt" style="display: none;">
+            <div class="prompt">
+                You reminded your son of how much you sacrificed for him. <br>
+                "PINAKAINKITAKAHITWALAAKOMAKAINPINALIGUANKITAPINAGARALKITATAPOS<br>
+                ETOLANGIPAPALITMOSAKIN?????
+                WALANGHIYAKAMAYARAWKARINMABUBULOKKASAIMPYERNO!!!!!" <br>
+                He has become immune to it, but at least you have gotten it off your chest.
+                <br>
+                <div class="bn-button" id="button-back-gt">BACK</div>
+            </div>
+        </div>
+
+        <div class="prompt" id="storage-options">
+            <div class="button-container">
+                <div class="locked-button" id="button-sandok">Close-Range Wooden Sandok Pro MAX (LOCKED)</div>
+                <div class="locked-button" id="button-walis">Infinity-Damage-Sturdy Walis Tambo (LOCKED)</div>
+                <div class="prompt-button" id="button-slippers">M24-Versatile-Range Flying Slippers </div>
+                <div class="bn-button" id="button-back-store">BACK</div>
+            </div>
+        </div>
+
+        <div id="slippers-opt" style="display: none;">
+            <div class="prompt">
+                BULLSEYE!!! A TRUE SLIPPER SNIPER.
+                <br>
+                THE MASTER OF MASTERS.
+                <br>
+                <div class="bn-button" id="button-end-slip">END</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
