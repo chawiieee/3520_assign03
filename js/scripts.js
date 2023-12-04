@@ -1,6 +1,9 @@
 $(document).ready(function () {
+    // Reset all button click events
+    resetbuttons();
+
     // Click event for the ENTER button on the title page
-    $(".button-enter").click(function () {
+    $(".button-enter").on("click", function () {
         $("#titlePage").hide();
         $("#scene01").show();
         fadeInWithDelay("#prompt-01", 5);
@@ -10,13 +13,13 @@ $(document).ready(function () {
     });
 
     // BACK button on scene01
-    $("#button-back-01").click(function () {
+    $("#button-back-01").on("click", function () {
         $("#scene01").hide();
         $("#titlePage").show();
     });
 
     // NEXT button on scene01 leads to SCENE02
-    $("#button-next-01").click(function () {
+    $("#button-next-01").on("click", function () {
         $("#scene01").hide();
         $("#scene02").show();
         $("#storage-options").hide();
@@ -25,7 +28,7 @@ $(document).ready(function () {
     });
 
     // BACK button on scene02
-    $("#button-back-s02").click(function () {
+    $("#button-back-s02").on("click", function () {
         $("#scene02").show(); a
         $("#storage-options").hide();
         $("#prompt-02").show();
@@ -33,7 +36,7 @@ $(document).ready(function () {
     });
 
     // TALK button on scene02
-    $("#button-talk").click(function () {
+    $("#button-talk").on("click", function () {
         $("#scene02 img").fadeOut(500, function () {
             $(this).attr("src", "imgs/fail-talk.gif").fadeIn(3000);
         });
@@ -45,7 +48,7 @@ $(document).ready(function () {
     });
 
     // BACK button on talk-opt
-    $("#button-back-talk").click(function () {
+    $("#button-back-talk").on("click", function () {
         $("#scene02 img").attr("src", "imgs/angrymom.svg"); // Change image source back to angry mom
         $("#talk-opt").hide();
         $("#gt").hide();
@@ -54,7 +57,7 @@ $(document).ready(function () {
     });
 
     // GT button on scene02
-    $("#button-guilttrip").click(function () {
+    $("#button-guilttrip").on("click", function () {
         $("#scene02 img").fadeOut(500, function () {
             $(this).attr("src", "imgs/gt.gif").fadeIn(3000);
         });
@@ -65,7 +68,7 @@ $(document).ready(function () {
     });
 
     // BACK button on gt
-    $("#button-back-gt").click(function () {
+    $("#button-back-gt").on("click", function () {
         $("#scene02 img").attr("src", "imgs/angrymom.svg"); // Change image source back to angry mom
         $("#talk-opt").hide();
         $("#gt").hide();
@@ -74,7 +77,7 @@ $(document).ready(function () {
     });
 
     // STORAGE button on scene02 --- show the storage options
-    $("#button-storage").click(function () {
+    $("#button-storage").on("click", function () {
         $("#scene01").hide();
         $("#scene02").show();
         $("#prompt-02").hide();
@@ -83,7 +86,7 @@ $(document).ready(function () {
     });
 
     // slippers button on scene02 --- 
-    $("#button-slippers").click(function () {
+    $("#button-slippers").on("click", function () {
         $("#scene02 img").fadeOut(500, function () {
             $(this).attr("src", "imgs/hitslippers-full.gif").fadeIn(3000);
         });
@@ -96,7 +99,7 @@ $(document).ready(function () {
     });
 
     // BACK button on slippers-opt
-    $("#button-end-slip").click(function () {
+    $("#button-end-slip").on("click", function () {
         $("#scene02 img").attr("src", "imgs/angrymom.svg");
         $("#scene02").hide();
         $("#talk-opt").hide();
@@ -109,12 +112,28 @@ $(document).ready(function () {
 
 
     // BACK button on storage-options
-    $("#button-back-store").click(function () {
+    $("#button-back-store").on("click", function () {
         $("#scene02").show();
         $("#storage-options").hide();
         $("#prompt-02").show();
         $(".button-container").hide().fadeIn(2500);
     });
+
+    function resetbuttons() {
+        $("#button-back-store").unbind();
+        $("#button-end-slip").unbind();
+        $("#button-slippers").unbind();
+        $(".button-enter").unbind();
+        $("#button-back-01").unbind();
+        $("#button-back-s02").unbind();
+        $("#button-next-01").unbind();
+        $("#button-talk").unbind();
+        $("#button-back-talk").unbind();
+        $("#button-guilttrip").unbind();
+        $("#button-back-gt").unbind();
+        $("#button-storage").unbind();
+    }
+
 });
 
 // Function to fade in with a delay
