@@ -1,7 +1,4 @@
 $(document).ready(function () {
-    // Reset all button click events
-    resetbuttons();
-
     // Click event for the ENTER button on the title page
     $(".button-enter").on("click", function () {
         $("#titlePage").hide();
@@ -96,6 +93,10 @@ $(document).ready(function () {
         $("#storage-options").hide();
         fadeInWithDelay("#slippers-opt", 7500);
         fadeInWithDelay("#button-end-slip", 10000);
+        $("#button-end-slip").addClass("reset");
+        $(".reset").on("click", function () {
+            location.reload();
+        });
     });
 
     // BACK button on slippers-opt
@@ -119,20 +120,20 @@ $(document).ready(function () {
         $(".button-container").hide().fadeIn(2500);
     });
 
-    function resetbuttons() {
-        $("#button-back-store").unbind();
-        $("#button-end-slip").unbind();
-        $("#button-slippers").unbind();
-        $(".button-enter").unbind();
-        $("#button-back-01").unbind();
-        $("#button-back-s02").unbind();
-        $("#button-next-01").unbind();
-        $("#button-talk").unbind();
-        $("#button-back-talk").unbind();
-        $("#button-guilttrip").unbind();
-        $("#button-back-gt").unbind();
-        $("#button-storage").unbind();
-    }
+    // function resetbuttons() {
+    //     $("#button-back-store").unbind();
+    //     $("#button-end-slip").unbind();
+    //     $("#button-slippers").unbind();
+    //     $(".button-enter").unbind();
+    //     $("#button-back-01").unbind();
+    //     $("#button-back-s02").unbind();
+    //     $("#button-next-01").unbind();
+    //     $("#button-talk").unbind();
+    //     $("#button-back-talk").unbind();
+    //     $("#button-guilttrip").unbind();
+    //     $("#button-back-gt").unbind();
+    //     $("#button-storage").unbind();
+    // }
 
 });
 
