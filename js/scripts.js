@@ -92,8 +92,7 @@ $(document).ready(function () {
 
     // Click event for the moon element
     $("#moon").on("click", function () {
-        // Trigger image change to hitslippers-full.gif
-        $("#layer-scene").attr("src", "hitslippers-full.gif");
+        $("#slippers-opt").attr("src", "imgs/hitslippers-full.gif");
         $("#prompt-aim").hide();
         fadeInWithDelay("#prompt-bullseye", 2000);
     });
@@ -101,11 +100,12 @@ $(document).ready(function () {
     // Click event for the entire SVG
     $("#layer-scene").on("click", function (event) {
         if (!$(event.target).is("#moon")) {
-            $("#layer-scene").attr("src", "drunkson.svg");
+            $("#slippers-opt").attr("src", "imgs/slippers-miss.gif");
         }
     });
 
-    // BACK button on slippers-opt
+
+    // END button 
     $("#button-end-slip").on("click", function () {
         $(this).addClass("reset");
         $(".reset").on("click", function () {
