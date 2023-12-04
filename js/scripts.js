@@ -81,46 +81,46 @@ $(document).ready(function () {
         $("#talk-opt").hide();
         $("#gt").hide();
         $("#storage-options").hide();
+        $("#prompt-miss").hide();
         $("#prompt-bullseye").hide();
         fadeInWithDelay("#scene03", 500);
         fadeInWithDelay("#prompt-aim", 1000);
 
+        // Load the SVG image
         $("#slippers-opt").load("imgs/mom_slippersaim.svg", function () {
             console.log("SVG loaded successfully");
         });
+
+        // Click event for the moon element
+        $("#moon").on("click", function () {
+            $("#slippers-opt").attr("src", "imgs/hitslippers-full.gif");
+            $("#prompt-aim").hide();
+            fadeInWithDelay("#prompt-bullseye", 2000);
+        });
+
+        // Click event for the entire SVG
+        $("#layer-scene").on("click", function (event) {
+            if (!$(event.target).is("#moon")) {
+                $("#slippers-opt").attr("src", "imgs/slippers-miss.gif");
+            }
+        });
     });
 
-    // Click event for the moon element
-    $("#moon").on("click", function () {
-        $("#slippers-opt").attr("src", "imgs/hitslippers-full.gif");
-        $("#prompt-aim").hide();
-        fadeInWithDelay("#prompt-bullseye", 2000);
-    });
-
-    // Click event for the entire SVG
-    $("#layer-scene").on("click", function (event) {
-        if (!$(event.target).is("#moon")) {
-            $("#slippers-opt").attr("src", "imgs/slippers-miss.gif");
-        }
+    // BACK button on storage-options
+    $("#button-back-store").on("click", function () {
+        $("#scene02").show();
+        $("#storage-options").hide();
+        $("#prompt-02").show();
+        $(".button-container").hide().fadeIn(2500);
     });
 
 
     // END button 
-    $("#button-end-slip").on("click", function () {
+    $("#button-end").on("click", function () {
         $(this).addClass("reset");
         $(".reset").on("click", function () {
             location.reload();
         })
-
-
-        // BACK button on storage-options
-        $("#button-back-store").on("click", function () {
-            $("#scene02").show();
-            $("#storage-options").hide();
-            $("#prompt-02").show();
-            $(".button-container").hide().fadeIn(2500);
-        });
-
     });
 
     // Function to fade in with a delay
