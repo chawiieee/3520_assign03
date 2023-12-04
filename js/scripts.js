@@ -28,6 +28,7 @@ $(document).ready(function () {
     $("#button-talk").on("click", function () {
         $("#scene02 img").fadeOut(500, function () {
             $(this).attr("src", "imgs/fail-talk.gif").fadeIn(3000);
+            $(this).addClass("img");
         });
         $("#prompt-02").hide();
         $("#gt").hide();
@@ -89,30 +90,66 @@ $(document).ready(function () {
         // Load the SVG image
         $("#slippers-opt").load("imgs/mom_slippersaim.svg", function () {
             console.log("SVG loaded successfully");
-        });
 
-        // Click event for the moon element
-        $("#moon").on("click", function () {
-            $("#slippers-opt").attr("src", "imgs/hitslippers-full.gif");
-            $("#prompt-aim").hide();
-            fadeInWithDelay("#prompt-bullseye", 2000);
+            // Click event for the moon element
+            $("#moon").on("click", function () {
+                console.log("Moon clicked");
+                $("#slippers-opt").html('<img src=imgs/hitslippers-full.gif>');
+                $("#prompt-aim").hide();
+                fadeInWithDelay("#prompt-bullseye", 5000);
+            });
+            // Click event for the entire SVG
+            $("#layer-scene").on("click", function (event) {
+                if (!$(event.target).is("#moon")) {
+                    $("#slippers-opt").html('<img src=imgs/slippers-miss.gif>');
+                    $("#prompt-aim").hide();
+                    fadeInWithDelay("#prompt-miss", 5000);
+                }
+            });
         });
+    })
 
-        // Click event for the entire SVG
-        $("#layer-scene").on("click", function (event) {
-            if (!$(event.target).is("#moon")) {
-                $("#slippers-opt").attr("src", "imgs/slippers-miss.gif");
-            }
+
+    // BACK button on scene03 --- weapon selection
+    $("#button-tryagain").on("click", function () {
+        $("#scene01").hide();
+        $("#scene02").hide();
+        $("#prompt-02").hide();
+        $("#storage-options").hide();
+        $("#prompt-bullseye").hide();
+        $("#prompt-miss").hide();
+        // Load the SVG image
+        $("#slippers-opt").load("imgs/mom_slippersaim.svg", function () {
+            console.log("SVG loaded successfully");
+
+            // Click event for the moon element
+            $("#moon").on("click", function () {
+                console.log("Moon clicked");
+                $("#slippers-opt").html('<img src=imgs/hitslippers-full.gif>');
+                $("#prompt-aim").hide();
+                fadeInWithDelay("#prompt-bullseye", 5000);
+
+            });
+            // Click event for the entire SVG
+            $("#layer-scene").on("click", function (event) {
+                if (!$(event.target).is("#moon")) {
+                    $("#slippers-opt").html('<img src=imgs/slippers-miss.gif>');
+                    $("#prompt-aim").hide();
+                    fadeInWithDelay("#prompt-miss", 100);
+                }
+            });
         });
     });
 
     // BACK button on storage-options
     $("#button-back-store").on("click", function () {
+        //leads back to scene02, mom options
         $("#scene02").show();
         $("#storage-options").hide();
         $("#prompt-02").show();
         $(".button-container").hide().fadeIn(2500);
     });
+
 
 
     // END button 
@@ -128,4 +165,4 @@ $(document).ready(function () {
         $(element).hide().delay(delay).fadeIn(1000);
     }
 
-});
+})
