@@ -63,6 +63,10 @@ body {
     height: auto;
 }
 
+#layer-scene {
+    cursor: pointer;
+}
+
 /*BUTTONS */
 .button-enter {
     display: inline-block;

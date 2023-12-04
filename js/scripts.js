@@ -24,15 +24,6 @@ $(document).ready(function () {
         $(".button-container").hide().fadeIn(2500);
     });
 
-    // BACK button on scene02
-    // $("#button-back-s02").on("click", function () {
-    //     $("#scene02").hide();
-    //     $("#storage-options").hide();
-    //     $("#prompt-02").hide();
-    //     $(".button-container").hide().fadeIn(2500);
-    //     $("#scene01").show();
-    // });
-
     // TALK button on scene02
     $("#button-talk").on("click", function () {
         $("#scene02 img").fadeOut(500, function () {
@@ -91,38 +82,50 @@ $(document).ready(function () {
         $("#gt").hide();
         $("#storage-options").hide();
         $("#prompt-bullseye").hide();
-        fadeInWithDelay("#slippers-opt", "momaim", 7500);
-        fadeInWithDelay("#button-end-slip", 10000);
-        $("#button-end-slip").addClass("reset");
-        $(".reset").on("click", function () {
-            location.reload();
+        fadeInWithDelay("#scene03", 500);
+        fadeInWithDelay("#prompt-aim", 1000);
+
+        $("#slippers-opt").load("imgs/mom_slippersaim.svg", function () {
+            console.log("SVG loaded successfully");
         });
+    });
+
+    // Click event for the moon element
+    $("#moon").on("click", function () {
+        // Trigger image change to hitslippers-full.gif
+        $("#layer-scene").attr("src", "hitslippers-full.gif");
+        $("#prompt-aim").hide();
+        fadeInWithDelay("#prompt-bullseye", 2000);
+    });
+
+    // Click event for the entire SVG
+    $("#layer-scene").on("click", function (event) {
+        if (!$(event.target).is("#moon")) {
+            $("#layer-scene").attr("src", "drunkson.svg");
+        }
     });
 
     // BACK button on slippers-opt
     $("#button-end-slip").on("click", function () {
-        $("#scene02 img").attr("src", "imgs/angrymom.svg");
-        $("#scene02").hide();
-        $("#talk-opt").hide();
-        $("#gt").hide();
-        $("#storage-options").hide();
-        $("#slippers-opt").hide();
-        $(".button-container").hide();
-        $("#titlePage").show();
-    })
+        $(this).addClass("reset");
+        $(".reset").on("click", function () {
+            location.reload();
+        })
 
 
-    // BACK button on storage-options
-    $("#button-back-store").on("click", function () {
-        $("#scene02").show();
-        $("#storage-options").hide();
-        $("#prompt-02").show();
-        $(".button-container").hide().fadeIn(2500);
+        // BACK button on storage-options
+        $("#button-back-store").on("click", function () {
+            $("#scene02").show();
+            $("#storage-options").hide();
+            $("#prompt-02").show();
+            $(".button-container").hide().fadeIn(2500);
+        });
+
     });
 
-});
+    // Function to fade in with a delay
+    function fadeInWithDelay(element, delay) {
+        $(element).hide().delay(delay).fadeIn(1000);
+    }
 
-// Function to fade in with a delay
-function fadeInWithDelay(element, delay) {
-    $(element).hide().delay(delay).fadeIn(1000);
-}
+});
