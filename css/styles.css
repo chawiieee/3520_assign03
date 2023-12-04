@@ -21,6 +21,7 @@ html {
 
 img {
     max-width: 100%;
+    align-items: center;
 }
 
 /*END*/
@@ -48,6 +49,21 @@ body {
     height: 66vh;
 }
 
+
+.prompt {
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 10px;
+    background-color: rgba(89, 89, 142, 0.25);
+    border-color: var(--gray);
+    min-width: 50vw;
+    height: auto;
+}
+
+/*BUTTONS */
 .button-enter {
     display: inline-block;
     border-style: solid;
@@ -110,28 +126,4 @@ body {
     cursor: pointer;
     margin: 10px;
     color: var(--light-gray)
-}
-
-/*SCENE01*/
-.scene {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: 50px;
-    min-width: 50vw;
-    max-width: fit-content;
-    height: auto;
-}
-
-.prompt {
-    display: block;
-    padding: 20px;
-    font-size: 20px;
-    border-style: solid;
-    border-radius: 10px;
-    border-width: 10px;
-    background-color: rgba(89, 89, 142, 0.25);
-    border-color: var(--gray);
-    min-width: 50vw;
-    height: auto;
 }

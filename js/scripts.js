@@ -25,12 +25,13 @@ $(document).ready(function () {
     });
 
     // BACK button on scene02
-    $("#button-back-s02").on("click", function () {
-        $("#scene02").show(); a
-        $("#storage-options").hide();
-        $("#prompt-02").show();
-        $(".button-container").hide().fadeIn(2500);
-    });
+    // $("#button-back-s02").on("click", function () {
+    //     $("#scene02").hide();
+    //     $("#storage-options").hide();
+    //     $("#prompt-02").hide();
+    //     $(".button-container").hide().fadeIn(2500);
+    //     $("#scene01").show();
+    // });
 
     // TALK button on scene02
     $("#button-talk").on("click", function () {
@@ -73,7 +74,7 @@ $(document).ready(function () {
         $(".button-container").hide().fadeIn(2500);
     });
 
-    // STORAGE button on scene02 --- show the storage options
+    // STORAGE button on scene02 --- show the storage options -- 
     $("#button-storage").on("click", function () {
         $("#scene01").hide();
         $("#scene02").show();
@@ -82,16 +83,15 @@ $(document).ready(function () {
         $("#button-sandok, #button-walis, #button-slippers, #button-back-store").hide().fadeIn(2500);
     });
 
-    // slippers button on scene02 --- 
+    // slippers button --- scene03 start
     $("#button-slippers").on("click", function () {
-        $("#scene02 img").fadeOut(500, function () {
-            $(this).attr("src", "imgs/hitslippers-full.gif").fadeIn(3000);
-        });
+        $("#scene02").hide();
         $("#prompt-02").hide();
         $("#talk-opt").hide();
         $("#gt").hide();
         $("#storage-options").hide();
-        fadeInWithDelay("#slippers-opt", 7500);
+        $("#prompt-bullseye").hide();
+        fadeInWithDelay("#slippers-opt", "momaim", 7500);
         fadeInWithDelay("#button-end-slip", 10000);
         $("#button-end-slip").addClass("reset");
         $(".reset").on("click", function () {
@@ -119,21 +119,6 @@ $(document).ready(function () {
         $("#prompt-02").show();
         $(".button-container").hide().fadeIn(2500);
     });
-
-    // function resetbuttons() {
-    //     $("#button-back-store").unbind();
-    //     $("#button-end-slip").unbind();
-    //     $("#button-slippers").unbind();
-    //     $(".button-enter").unbind();
-    //     $("#button-back-01").unbind();
-    //     $("#button-back-s02").unbind();
-    //     $("#button-next-01").unbind();
-    //     $("#button-talk").unbind();
-    //     $("#button-back-talk").unbind();
-    //     $("#button-guilttrip").unbind();
-    //     $("#button-back-gt").unbind();
-    //     $("#button-storage").unbind();
-    // }
 
 });
 
