@@ -94,7 +94,7 @@ $(document).ready(function () {
                 console.log("Moon clicked");
                 $("#slippers-opt").html('<img src=imgs/hitslippers-full.gif>');
                 $("#prompt-aim").hide();
-                fadeInWithDelay("#prompt-bullseye", 5000);
+                fadeInWithDelay("#prompt-bullseye", 6000);
             });
             // Click event for the entire SVG
             $("#layer-scene").on("click", function (event) {
