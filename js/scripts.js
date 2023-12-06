@@ -3,10 +3,10 @@ $(document).ready(function () {
     $(".button-enter").on("click", function () {
         $("#titlePage").hide();
         $("#scene01").show();
-        fadeInWithDelay("#prompt-01", 5);
-        fadeInWithDelay("#prompt-01v2", 2);
-        fadeInWithDelay("#prompt-01v3", 5);
-        fadeInWithDelay("#button-back-01, #button-next-01", 75);
+        fadeInWithDelay("#prompt-01", 500);
+        fadeInWithDelay("#prompt-01v2", 2000);
+        fadeInWithDelay("#prompt-01v3", 4000);
+        fadeInWithDelay("#button-back-01, #button-next-01", 6000);
     });
 
     // BACK button on scene01
@@ -28,13 +28,11 @@ $(document).ready(function () {
     $("#button-talk").on("click", function () {
         $("#scene02 img").fadeOut(500, function () {
             $(this).attr("src", "imgs/fail-talk.gif").fadeIn(3000);
-            $(this).addClass("img");
         });
         $("#prompt-02").hide();
         $("#gt").hide();
-        fadeInWithDelay("#talk-opt", 7500);
-        $("talk-opt").class("scene");
-        fadeInWithDelay("#button-back-talk", 10000);
+        fadeInWithDelay("#talk-opt", 5000);
+        fadeInWithDelay("#button-back-talk", 7500);
     });
 
     // BACK button on talk-opt
@@ -53,8 +51,8 @@ $(document).ready(function () {
         });
         $("#prompt-02").hide();
         $("#talk-opt").hide();
-        fadeInWithDelay("#gt", 7500);
-        fadeInWithDelay("#button-back-gt", 10000);
+        fadeInWithDelay("#gt", 5000);
+        fadeInWithDelay("#button-back-gt", 7500);
     });
 
     // BACK button on gt
